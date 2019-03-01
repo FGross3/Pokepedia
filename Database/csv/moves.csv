@@ -1,4 +1,4 @@
-id,move,type_id,power,pp
+id,move,typing_id,power,pp
 1,pound,1,40,35
 2,karate-chop,2,50,25
 3,double-slap,1,15,10
