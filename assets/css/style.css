@@ -37,7 +37,7 @@ input[type=text], input[type=password] {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid #3465ae;
   box-sizing: border-box;
   
 }
@@ -45,7 +45,7 @@ input[type=text], input[type=password] {
 /* Set a style for all buttons */
 button {
   background-color: #000000;
-  color: white;
+  color: #3465ae;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -63,7 +63,7 @@ button:hover {
 .cancelbtn {
   width: auto;
   padding: 10px 18px;
-  background-color: #f44336;
+  background-color: #fff;
   float: left;
 }
 
@@ -163,3 +163,7 @@ span.psw {
   width: 900px;
   margin: 0 auto;
 }
+
+
+
+
