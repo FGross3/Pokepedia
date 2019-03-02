@@ -88,8 +88,3 @@ CREATE TABLE pokemon
            PRIMARY KEY
           (id)
         );
-
-
-
-
-

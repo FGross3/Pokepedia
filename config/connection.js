@@ -1,7 +1,8 @@
 var Sequelize = require("sequelize");
 
-var sequelize = new Sequelize("pokemon_db", "root", "<password>", {
+var sequelize = new Sequelize("pokemon_db", "root", "Areyoureadykids?", {
   host: "localhost",
+  password: "root",
   port: 3306,
   dialect: "mysql",
   pool: {
