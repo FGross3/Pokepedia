@@ -9,47 +9,64 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="pokepedia.js">
         <title>Pokepedia</title>
-    </head>
 
-    <!-- https://giphy.com/gifs/ovRSGTNrdq5va/html5 -->
+
+
+
+        <!-- https://giphy.com/gifs/ovRSGTNrdq5va/html5 -->
+
     <body>
-        <h1>Poképedia</h1>
+        <div>
+            <div>
+                <button onclick="document.getElementById('id01').style.display='block'"
+                    style="width:auto;">Login</button>
 
+                <div id="id01" class="modal">
 
-        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+                    <form class="modal-content animate" action="/action_page.php">
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                title="Close Modal">&times;</span>
+                            <img src="https://media.giphy.com/media/UZlwD8u4DN1JK/giphy.gif" alt="Avatar" class="avatar"
+                                height="">
+                        </div>
 
-        <div id="id01" class="modal">
+                         <div class="container">
+                            <label for="uname"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" required>
 
-            <form class="modal-content animate" action="/action_page.php">
-                <div class="imgcontainer">
-                    <span onclick="document.getElementById('id01').style.display='none'" class="close"
-                        title="Close Modal">&times;</span>
-                    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                            <button type="submit">Login</button>
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember"> Remember me
+                            </label>
+                        </div>
+
+                        <div class="container" style="background-color:#000000">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                                class="cancelbtn">Cancel</button>
+                            <span class="psw">Forgot <a href="#">password?</a></span>
+                        
+                    </form>
+                    </div>
                 </div>
 
-                <div class="container">
-                    <label for="uname"><b>Username</b></label>
-                    <input type="text" placeholder="Enter Username" name="uname" required>
+                <br>
+                <br>
+                <br>
+                </head>
 
-                    <label for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                <div>
+                    <h1><a class="blinking">Poképedia</a></h1>
+                    <img src="assets/images/pokeball.gif" alt="ball" class="center" >
 
-                    <button type="submit">Login</button>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                    </label>
+
                 </div>
+            </div>
 
-                <div class="container" style="background-color:#f1f1f1">
-                    <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                        class="cancelbtn">Cancel</button>
-                    <span class="psw">Forgot <a href="#">password?</a></span>
-                </div>
-            </form>
         </div>
-
-       
-
     </body>
 
 </html>
