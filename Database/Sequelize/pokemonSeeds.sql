@@ -9,16 +9,12 @@ CREATE TABLE pokemon
 (
   id INT NOT NULL
   AUTO_INCREMENT,
-
   name VARCHAR
   (45) NOT NULL,
-
   type1 INT
   (2) NOT NULL,
-
-  type2 INT
-  (2) NULL,
-
+  type2 VARCHAR
+  (2) DEFAULT NULL,
   PRIMARY KEY
   (id)
 );
@@ -46,8 +42,8 @@ CREATE TABLE pokemon
   typing_id INT
       (2) NOT NULL,
 
-  power INT
-      (3) NULL,
+  power VARCHAR
+      (3) DEFAULT NULL,
 
       pp INT
       (2) NOT NULL,
