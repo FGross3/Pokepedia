@@ -5,8 +5,8 @@ module.exports = function(sequelize, DataTypes) {
     });
   
     nameType.associate = function(models) {
-      // Associating Author with Posts
-      // When an Author is deleted, also delete any associated Posts
+      // Associating Pokemon with Posts
+      // When an Pokemin is deleted, also delete any associated Posts
       nameType.hasMany(models.Post, {
         onDelete: "cascade"
       });
