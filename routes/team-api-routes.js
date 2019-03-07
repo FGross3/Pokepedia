@@ -23,8 +23,9 @@ module.exports = function(app) {
     // In this case, just db.Author
     db.Team.findAll({
       where: query,
-      include: [db.Team]
+      //include: [db.Trainer]
     }).then(function(dbTeam) {
+      console.log(dbTeam);
       res.json(dbTeam);
     });
   });

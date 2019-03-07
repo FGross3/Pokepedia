@@ -42,7 +42,7 @@ $(document).ready(function() {
         displayEmpty(trainer);
       }
       else {
-        initializeRows();
+        initializeRows(teams);
       }
     });
   }
@@ -54,12 +54,14 @@ $(document).ready(function() {
       url: "/api/teams/" + id
     })
       .then(function() {
+          // var imageUrl = "/assets/images/" + data.name + ".png";
         getTeams(postCategorySelect.val());
       });
   }
 
   // InitializeRows handles appending all of our constructed post HTML inside blogContainer
-  function initializeRows() {
+  function initializeRows(teams) {
+    
     teamContainer.empty();
     var teamsToAdd = [];
     for (var i = 0; i < teams.length; i++) {
@@ -69,7 +71,7 @@ $(document).ready(function() {
   }
 
   // This function constructs a post's HTML
-  function createNewRow(post) {
+  function createNewRow(team) {
     var formattedDate = new Date(team.createdAt);
     formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     var newTeamCard = $("<div>");
