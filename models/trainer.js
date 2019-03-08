@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Trainer = sequelize.define("Trainer", {
+  const Trainer = sequelize.define("Trainer", {
     name: DataTypes.STRING
   });
 
