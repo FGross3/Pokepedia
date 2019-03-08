@@ -33,8 +33,9 @@ $(document).ready(function() {
   function getTeams(trainer) {
     trainerId = trainer || "";
     if (trainerId) {
-      trainerId = "/?trainer_id=" + trainerId;
+      trainerId = "/" + trainerId;
     }
+    console.log("trainerID to be requested", trainerId);
     $.get("/api/teams" + trainerId, function(data) {
       console.log("Teams", data);
       teams = data;
@@ -72,6 +73,7 @@ $(document).ready(function() {
 
   // This function constructs a post's HTML
   function createNewRow(team) {
+      console.log("createNewRow function team", team);
     var formattedDate = new Date(team.createdAt);
     formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
     var newTeamCard = $("<div>");
@@ -98,7 +100,7 @@ $(document).ready(function() {
     newTeamCardBody.addClass("card-body");
     var newTeamBody = $("<p>");
     newTeamTitle.text(team.team_name + " ");
-    newTeamBody.text(team.pokemon_1 + " " + team.pokemon_2 + " " + team.pokemon_3 + " " + team.pokemon_4 + " " + team.pokemon_5 + " " + team.pokemon_6 + " ");
+    newTeamBody.text(team.pokemon_1.toUpperCase()+"\n" + ", " + team.pokemon_2.toUpperCase()+"\n" + ", " + team.pokemon_3.toUpperCase()+"\n" + ", " + team.pokemon_4.toUpperCase()+"\n" + ", " + team.pokemon_5.toUpperCase()+"\n" + ", " + team.pokemon_6.toUpperCase()+"\n");
     newTeamDate.text(formattedDate);
     newTeamTitle.append(newTeamDate);
     newTeamCardHeading.append(deleteBtn);
