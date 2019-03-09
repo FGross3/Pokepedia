@@ -24,3 +24,12 @@ button {
   color: white;
   padding-left: 2%;
 }
+
+.navbar-header {
+  width: 100%;
+}
+
+.btn-dark {
+  float: right;
+  margin: 1%;
+}

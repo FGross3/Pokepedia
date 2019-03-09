@@ -29,9 +29,10 @@ h3 {
 
 #pokepedia {
   color: #000080;
-  size: 100%;
+  font-size: 400%;
   padding: 1%;
   font-family: "Orbitron", sans-serif;
+  padding-top: 1%;
 }
 
 /* Full-width input fields */
@@ -78,13 +79,75 @@ button {
   float: right;
 }
 
+.jumbotron {
+  background: none;
+  text-align: center;
+}
+
+.rotating-ball {
+  display: block;
+  margin: auto;
+}
+
+#login {
+  position: relative;
+  left: 70%;
+  border-radius: 12px;
+  width: 10em;
+}
+
+#signup {
+  position: relative;
+  left: 70%;
+  border-radius: 12px;
+  width: 10em;
+}
+
+.gif-row {
+  text-align: center;
+}
+
+#ash-gif,
+#pikachu-gif {
+  height: 75%;
+  width: 75%;
+}
+
 @media screen and (max-width: 1000px) {
   img {
     height: 50%;
     width: 30%;
   }
+
+  .rotating-ball {
+    height: 75%;
+    width: 75%;
+  }
   .centered {
     height: 15em;
     width: 100%;
+  }
+
+  #pokepedia {
+    padding-top: 10%;
+  }
+  .login-buttons {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15%;
+  }
+
+  #login {
+    position: relative;
+    left: 27%;
+    border-radius: 12px;
+    width: 10em;
+  }
+
+  #signup {
+    position: relative;
+    left: 27%;
+    border-radius: 12px;
+    width: 10em;
   }
 }
