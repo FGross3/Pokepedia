@@ -25,27 +25,17 @@
     <div>
 
         <body background="assets/images/brushed_alu.png">
-
-            <div class="navigation">
-                <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
-
-                <label for="navi-toggle" class="navigation__button">
-                    <span class="navigation__icon">&nbsp;</span>
-                </label>
-
-                <div class="navigation__background">&nbsp;</div>
-
-                <nav class="navigation__nav">
-                    <ul class="navigation__list">
-                        <li class="navigation__item"><a href="/search" class="navigation__link"><span></span>Search</a></li>
-                        <li class="navigation__item"><a href="/team" class="navigation__link"><span></span>Team-building</a>
-                        </li>
-                        <li class="navigation__item"><a href="/chat" class="navigation__link"><span></span>Chat</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-        
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="btn btn-dark" href="/search">Search Pokémon</a>
+                    <a class="btn btn-dark" href="/team">Create a Team</a>
+                    <a class="btn btn-dark" href="/chat">Chat Room</a>
+                    <a class="btn btn-dark" href="/logout">Logout</a>
+                  </div>
+                </div>
+            </nav>
+            
             <h2 class="w3-animate-fading">Welcome <p class="member-name"></p></h2>
 
             <br>
