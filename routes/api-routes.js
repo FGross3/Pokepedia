@@ -1,96 +1,58 @@
- var db = require("../models");
+ // Requiring path to so we can use relative routes to our HTML files
+var path = require("path");
 
-// Routes
-// =============================================================
+// Requiring our custom middleware for checking if a user is logged in
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 module.exports = function(app) {
 
-  // GET route for getting all of the pokemon
-  app.get("/api/pokemon", function(req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.pokemon_db.findAll({}).then(function(dbPokemon) {
-      // We have access to the pokemon as an argument inside of the callback function
-      res.json(dbPokemon);
-    });
+  app.get("/", function(req, res) {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.sendFile(path.join(__dirname, "../public/splash.html"));
   });
 
-  // POST route for saving a new pokemon
-  app.get("/api/pokemon", function(req, res) {
-    // create takes an argument of an object describing the item we want to
-    // insert into our table. In this case we just we pass in an object with a text
-    // and complete property (req.body)
-    db.pokemon_db.pokemon.findOne({
-      id: req.body.text,
-      type1: req.body.num,
-      type2: req.body.num
-    }).then(function(dbPokemon) {
-      // We have access to the new todo as an argument inside of the callback function
-      res.json(dbPokemon);
-    })
-      .catch(function(err) {
-      // Whenever a validation or flag fails, an error is thrown
-      // We can "catch" the error to prevent it from being "thrown", which could crash our node app
-        res.json(err);
-      });
+  app.get("/login", function(req, res) {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
-  app.get("/api/pokemon", function(req, res) {
-    db.pokemon_db.typing.findOne({
-      id: req.body.text,
-      typing: req.body.text
-      
-    }).then(function(dbPokemon) {
-      res.json(dbPokemon);
-    })
-      .catch(function(err) {
-        res.json(err);
-      });
+  app.get("/signup", function(req, res) {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/signup");
+    }
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
-  app.get("/api/pokemon", function(req, res) {
-    db.pokemon_db.moves.findOne({
-      id: req.body.text,
-      move: req.body.text,
-      typing_id: req.body.int,
-      power: req.body.num
-      
-    }).then(function(dbPokemon) {
-      res.json(dbPokemon);
-    })
-      .catch(function(err) {
-        res.json(err);
-      });
+  // Here we've add our isAuthenticated middleware to this route.
+  // If a user who is not logged in tries to access this route they will be redirected to the signup page
+  app.get("/options", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/options.html"));
   });
 
-  app.get("/api/pokemon", function(req, res) {
-    db.pokemon_db.movesets.findOne({
-      id: req.body.text,
-      pokemon_id: req.body.text,
-      move_id: req.body.text
-      
-    }).then(function(dbPokemon) {
-      res.json(dbPokemon);
-    })
-      .catch(function(err) {
-        res.json(err);
-      });
+  app.get("/team", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/team.html"));
   });
 
- 
-
-  app.get("/api/pokemon", function(req, res) {
-    db.pokemon_db.damage_factor.findOne({
-      id: req.body.text,
-      move_type_id: req.body.num,
-      target_pokemon_id: req.body.num,
-      damage_factor: req.body.num
-      
-    }).then(function(dbPokemon) {
-      res.json(dbPokemon);
-    })
-      .catch(function(err) {
-        res.json(err);
-      });
+  app.get("/search", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/search.html"));
   });
+
+  app.get("/create", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/create.html"));
+  });
+
+  app.get("/chat", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/chat.html"));
+  });
+
 
 };
+
  
