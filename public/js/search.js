@@ -2,11 +2,13 @@ $(document).ready(function() {
 
     $.get("/api/pokemon", function(data) {
         data.forEach(function (pokemon) {
+            var imagePath = "/images/";
             console.log(pokemon);
             $("#stats").append(`<h3><strong>Number:</strong> <span id="id">${pokemon.id}</span></h3>`);
             $("#stats").append(`<h3><strong>Name:</strong> <span id="name">${pokemon.name}</span></h3>`);
             $("#stats").append(`<h3><strong>Type 1:</strong> <span id="type1">${pokemon.type1}</span></h3>`);
             $("#stats").append(`<h3><strong>Type 2:</strong> <span id="type2">${pokemon.type2}</span></h3>`);
+            $("#stats").append(`<span id="image"><img src=${imagePath}${pokemon.image}></span>`);
         })
     })
 
@@ -27,6 +29,7 @@ $(document).ready(function() {
             $("#name").text(data.name);
             $("#type1").text(data.type1);
             $("#type2").text(data.type2);
+            $("#image").image(data.image);
           }
           else {
             $("#name").text("Your pokemon was not found.");
