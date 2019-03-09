@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `pokemon_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
-USE `pokemon_db`;
+CREATE DATABASE  IF NOT EXISTS azp7ytu8ivihh8w9;
+USE azp7ytu8ivihh8w9;
 -- MySQL dump 10.13  Distrib 8.0.14, for Win64 (x86_64)
 --
 -- Host: localhost    Database: pokemon_db
