@@ -52,5 +52,9 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/chat.html"));
   });
 
+  app.get("/members", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/members.html"));
+  });
+
 
 };
