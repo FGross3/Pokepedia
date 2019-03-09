@@ -1,0 +1,26 @@
+body {
+  background-image: url("../images/gplaypattern.png");
+  background-color: #cccccc;
+}
+
+.jumbotron {
+  color: white;
+  background-image: url("../images/dark-honeycomb.png");
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+}
+
+#stats {
+  text-align: center;
+}
+
+button {
+  float: left;
+}
+
+#search,
+#statistics {
+  background-color: #bb141b;
+  color: white;
+  padding-left: 2%;
+}

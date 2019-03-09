@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="assets/css/style-search.css">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:500" rel="stylesheet">
 
 </head>
 
@@ -23,7 +25,7 @@
             </div>
         </div>
     </nav>
-    <div class="jumbotron">
+    <div class="jumbotron ">
       <h1>Search Poképedia</h1>
       <h3>The greatest resource in Rhyme City for Pokémon statistics!</h3>
       <hr>
@@ -35,13 +37,13 @@
 
         <div class="card mb-4">
           <div class="card-header">
-            <h3><strong>Pokémon Search</strong></h3>
+            <h3 id = "search"><strong>Pokémon Search</strong></h3>
           </div>
           <div class="card-body">
             <input placeholder="Type Pokemon Name" type="text" id="pokemon-search" class="form-control"></input>
             <br>
             <div class="text-right">
-              <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="fa fa-search"></span> I choose you!</button>
+              <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="fa fa-search"></span> Search</button>
 
             </div>
           </div>
@@ -49,7 +51,7 @@
 
         <div class="card">
           <div class="card-header">
-            <h3><strong>Pokémon Statistics</strong></h3>
+            <h3 id="statistics"><strong>Pokémon Statistics</strong></h3>
           </div>
           <div class="card-body">
             <div id="stats"></div>
