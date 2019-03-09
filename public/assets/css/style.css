@@ -82,6 +82,8 @@ button {
 .jumbotron {
   background: none;
   text-align: center;
+  margin: 0;
+  width: 120%;
 }
 
 .rotating-ball {
@@ -111,6 +113,13 @@ button {
 #pikachu-gif {
   height: 75%;
   width: 75%;
+}
+#chat-heading {
+  margin: auto;
+}
+
+#create-team {
+  font-family: "Orbitron", sans-serif;
 }
 
 @media screen and (max-width: 1000px) {
