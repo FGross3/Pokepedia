@@ -1,13 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
-    var Trainer = sequelize.define("Trainer", {
-      name: DataTypes.STRING
+  const Trainer = sequelize.define("Trainer", {
+    name: DataTypes.STRING
+  });
+
+  Trainer.associate = function(models) {
+    Trainer.hasMany(models.Team, {
+      onDelete: "cascade"
     });
-  
-    Trainer.associate = function(models) {
-      Trainer.hasMany(models.Team, {
-        onDelete: "cascade"
-      });
-    };
-  
-    return Trainer;
+  };
+
+  return Trainer;
 };

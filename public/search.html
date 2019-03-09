@@ -13,21 +13,16 @@
 </head>
 
 <body>
-
-  <div class="container">
-        <div class="container">
-                <div class="row mt-4">
-                    <div class="col-md-2 col-sm-2">
-                        <a class="btn btn-light" href="/members">Home</a>
-                    </div>
-                    <div class="col-md-2 col-sm-2">
-                        <a class="btn btn-light" href="/team">Manage Teams</a>
-                    </div>
-                    <div class="col-md-2 col-sm-2">
-                        <a class="btn btn-light" href="/chat">Chat Room</a>
-                    </div>
-                </div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="btn btn-dark" href="/options">Home</a>
+                <a class="btn btn-dark" href="/team">Create a Team</a>
+                <a class="btn btn-dark" href="/chat">Chat Room</a>
+                <a class="btn btn-dark" href="/logout">Logout</a>
+            </div>
         </div>
+    </nav>
     <div class="jumbotron">
       <h1>Search Poképedia</h1>
       <h3>The greatest resource in Rhyme City for Pokémon statistics!</h3>
@@ -43,7 +38,7 @@
             <h3><strong>Pokémon Search</strong></h3>
           </div>
           <div class="card-body">
-            <input type="text" id="pokemon-search" class="form-control">
+            <input placeholder="Type Pokemon Name" type="text" id="pokemon-search" class="form-control"></input>
             <br>
             <div class="text-right">
               <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="fa fa-search"></span> I choose you!</button>
@@ -57,9 +52,7 @@
             <h3><strong>Pokémon Statistics</strong></h3>
           </div>
           <div class="card-body">
-            <div id="stats">
-
-            </div>
+            <div id="stats"></div>
           </div>
         </div>
       </div>
@@ -70,11 +63,9 @@
   <script type="text/javascript">
     // $("#search-btn").on("click", function() {
     //   var searchedPokemon = $("#pokemon-search").val().trim();
-
     //   // Using a RegEx Pattern to remove spaces from searchedCharacter
     //   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
     //   searchedPokemon = searchedPokemon.replace(/\s+/g, "").toLowerCase();
-
     //   $.get("/api/characters/" + searchedCharacter, function(data) {
     //     console.log(data);
     //     if (data) {
