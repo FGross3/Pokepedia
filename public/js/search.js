@@ -9,4 +9,35 @@ $(document).ready(function() {
             $("#stats").append(`<h3><strong>Type 2:</strong> <span id="type2">${pokemon.type2}</span></h3>`);
         })
     })
-})
+
+
+    $("#search-btn").on("click", function() {
+        var searchedPokemon = $("#pokemon-search").val().trim();
+
+  
+        // Using a RegEx Pattern to remove spaces from searchedCharacter
+        // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+        searchedPokemon = searchedPokemon.replace(/\s+/g, "").toLowerCase();
+  
+        $.get("/api/pokemon/" + searchedPokemon, function(data) {
+            // $("#stats").empty();
+          console.log(data);
+          if (data) {
+            $("#stats").show();
+            $("#id").text(data.id);
+            $("#name").text(data.name);
+            $("#type1").text(data.type1);
+            $("#type2").text(data.type2);
+          }
+          else {
+            $("#name").text("Your pokemon was not found.");
+            $("#stats").hide();
+          }
+        });
+
+    });
+
+
+
+
+});
