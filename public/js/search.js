@@ -1,5 +1,18 @@
 $(document).ready(function() {
 
+  // function renderCard() {
+    
+  //   $("#stats").append(`<h3><strong>Pokedex Number:</strong> <span id="id">${data.id}</span></h3>`);
+  //           $("#stats").append(`<h3><strong>Pokemon Name:</strong> <span id="name">${data.name}</span></h3>`);
+  //           $("#stats").append(`<h3><strong>Type 1:</strong> <span id="type1">${data.type1}</span></h3>`);
+  //           // $("#stats").append(`<h3><strong>Type 2:</strong> <span id="type2">${pokemon.type2}</span></h3>`);
+  //           if (!data.type2){
+  //             $("type2").hide()
+  //           } else{
+  //             $("#stats").append(`<h3><strong>Type 2:</strong> <span id="type2">${data.type2}</span></h3>`);
+  //           }
+  // }
+
 
   $.get("/api/pokemon", function(data) {
       data.forEach(function (pokemon) {

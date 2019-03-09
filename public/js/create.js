@@ -1,22 +1,22 @@
 $(document).ready(function() {
   // Getting jQuery references to the post body, title, form, and author select
-  const pokemonOneInput = $("#pokemon1");
-  const pokemonTwoInput = $("#pokemon2");
-  const pokemonThreeInput = $("#pokemon3");
-  const pokemonFourInput = $("#pokemon4");
-  const pokemonFiveInput = $("#pokemon5");
-  const pokemonSixInput = $("#pokemon6");
-  const teamInput = $("#team");
-  const teamForm = $("#battle");
-  const trainerSelect = $("#trainer");
+  var pokemonOneInput = $("#pokemon1");
+  var pokemonTwoInput = $("#pokemon2");
+  var pokemonThreeInput = $("#pokemon3");
+  var pokemonFourInput = $("#pokemon4");
+  var pokemonFiveInput = $("#pokemon5");
+  var pokemonSixInput = $("#pokemon6");
+  var teamInput = $("#team");
+  var teamForm = $("#battle");
+  var trainerSelect = $("#trainer");
   // Adding an event listener for when the form is submitted
   $(teamForm).on("submit", handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
-  const url = window.location.search;
-  const teamId;
-  const trainerId;
+  var url = window.location.search;
+  var teamId;
+  var trainerId;
   // Sets a flag for whether or not we're updating a post to be false initially
-  const updating = false;
+  var updating = false;
 
   // If we have this section in our url, we pull out the post id from the url
   // In '?team_id=1', postId is 1
@@ -40,7 +40,7 @@ $(document).ready(function() {
       return;
     }
     // Constructing a newPost object to hand to the database
-    const newTeam = {
+    var newTeam = {
       TrainerId: trainerSelect
         .val()
         .trim(),
@@ -90,7 +90,7 @@ $(document).ready(function() {
 
   // Gets post data for the current post if we're editing, or if we're adding to an author's existing posts
   function getTeamData(id, type) {
-    let queryUrl;
+    var queryUrl;
     switch (type) {
     case "team":
       queryUrl = "/api/teams/" + id;
@@ -131,7 +131,7 @@ $(document).ready(function() {
       window.location.href = "/trainers";
     }
     $(".hidden").removeClass("hidden");
-    const rowsToAdd = [];
+    var rowsToAdd = [];
     for (var i = 0; i < data.length; i++) {
       rowsToAdd.push(createTrainerRow(data[i]));
     }
@@ -144,7 +144,7 @@ $(document).ready(function() {
 
   // Creates the author options in the dropdown
   function createTrainerRow(trainer) {
-    const listOption = $("<option>");
+    var listOption = $("<option>");
     listOption.attr("value", trainer.id);
     listOption.text(trainer.name);
     return listOption;
