@@ -18,6 +18,10 @@ button {
   float: left;
 }
 
+#chat {
+  text-align: center;
+}
+
 #search,
 #statistics {
   background-color: #bb141b;
