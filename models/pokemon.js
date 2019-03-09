@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             //defaultValue: null
         },
-        image: {
+        images: {
             type: DataTypes.STRING,
             defaultValue: ""
         }
